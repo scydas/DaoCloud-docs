@@ -45,12 +45,12 @@ metadata:
   labels:
     virtnest.io/os-family: windows
     virtnest.io/os-version: "server2019"
-  name: export-window-21
+  name: export-window-21                                      # 导入后的虚拟机名称，可更改，同 namespace 下保持唯一
   namespace: default
 spec:
   dataVolumeTemplates:
     - metadata:
-        name: export-window-21-rootdisk
+        name: export-window-21-rootdisk                      # 与下面 template spec 中的 volume 名称保持一致，同 namespace 下保持唯一
       spec:
         pvc:
           accessModes:
@@ -68,7 +68,7 @@ spec:
             secretRef: "vsphere21"
             initImageURL: "release.daocloud.io/virtnest/vddk:v8"
     - metadata:
-        name: export-window-21-datadisk
+        name: export-window-21-datadisk                    # 与下面 template spec 中的 volume 名称保持一致，同 namespace 下保持唯一
       spec:
         pvc:
           accessModes:
@@ -161,10 +161,10 @@ spec:
           name: ovs-bridge0
       volumes:
         - dataVolume:
-            name: export-window-21-rootdisk
+            name: export-window-21-rootdisk                               # 与上面 dataVolumeTemplates 中的名称保持一致
           name: rootdisk
         - dataVolume:
-            name: export-window-21-datadisk
+            name: export-window-21-datadisk                               # 与上面 dataVolumeTemplates 中的名称保持一致
           name: datadisk      
         # <1> 引导 virtio 驱动的 volumes
         # ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
