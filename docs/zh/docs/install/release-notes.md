@@ -8,6 +8,33 @@
 *[Kangaroo]: DCE 5.0 镜像仓库的开发代号
 *[Kpanda]: DCE 5.0 容器管理的开发代号
 *[Skoala]: DCE 5.0 微服务引擎的开发代号
+*[Hydra]: DCE 5.0 大模型服务平台的开发代号
+
+## 2025-09-30
+
+### v0.34.0
+
+- **新增** SKIP_DEPENDENCY_RESOURCES 特性门控，避免分阶段升级场景重复导入资源问题
+- **新增** 支持 Kylin V11 发行版离线部署，并优化相关离线包构建 CI
+- **新增** 支持集群节点接入密码密文处理
+- **新增** rp_filter sysctl 默认参数配置
+- **修复** 离线场景 tailing-sidecar-operator 镜像地址问题
+- **修复** kylin v11 环境安装 kind 集群 cgroup v2 兼容问题
+- **修复** manifest 配置组件 nodeAffinity 参数失效问题
+
+## 2025-08-31
+
+### v0.33.0
+
+- **优化** 更新前置检测 Helm 最小版本要求到 v3.14.0
+- **优化** 前置依赖脚本
+- **修复** RHEL8 系列发行版默认 Python 版本低导致集群部署失败问题
+- **修复** Kylin v10 发行版系统部署集群 VERSION_ID 非数值类型引发报错问题
+- **修复** mysql DSN URL 解析验证报错
+- **修复** Hydra 中重复 mysql 查询参数问题
+- **修复** Hydra 最小化部署副本数配置失效问题
+- **修复** Hydra 数据库字符集问题
+- **修复** Hydra 回滚 rollback-app mcamel 失败问题
 
 ## 2025-07-31
 

@@ -10,6 +10,8 @@ nav:
               - 适用场景: dce/scenario.md
               - 我们是 K8s 认证服务商: dce/kcsp.md
               - DCE 5.0 Release Notes:
+                  - v0.34.0-20250930 发布: dce/dce-rn/20250930.md
+                  - v0.33.0-20250831 发布: dce/dce-rn/20250831.md
                   - v0.32.0-20250731 发布: dce/dce-rn/20250731.md
                   - v0.31.0-20250630 发布: dce/dce-rn/20250630.md
                   - v0.30.0-20250530 发布: dce/dce-rn/20250530.md
@@ -168,6 +170,7 @@ nav:
                           - 模板说明: amamba/user-guide/pipeline/template/info.md
                       - 流水线分组: amamba/user-guide/pipeline/group/group.md
                       - 发版记录: amamba/user-guide/pipeline/release-stats.md
+                      - 高级参数选项: amamba/user-guide/pipeline/advanced_parameters.md
                   - 流水线缓存: amamba/user-guide/pipeline/pipeline_cache.md
                   - 自定义步骤:
                       - 自定义步骤介绍: amamba/customize-step.md
@@ -230,15 +233,17 @@ nav:
                   - 常见问题: kpanda/intro/faq.md
               - 集群管理:
                   - 创建集群: kpanda/user-guide/clusters/create-cluster.md
-                  - 接入集群: kpanda/user-guide/clusters/integrate-cluster.md
-                  - 访问集群: kpanda/user-guide/clusters/access-cluster.md
+                  - 接入/扩容/卸载集群:
+                      - 接入集群: kpanda/user-guide/clusters/integrate-cluster.md
+                      - 接入 Rancher 集群: kpanda/user-guide/clusters/integrate-rancher-cluster.md
+                      - 全局集群工作节点扩容: kpanda/best-practice/add-worker-node-on-global.md
+                      - 访问集群: kpanda/user-guide/clusters/access-cluster.md
+                      - 卸载/解除接入集群: kpanda/user-guide/clusters/delete-cluster.md
                   - 升级集群: kpanda/user-guide/clusters/upgrade-cluster.md
-                  - 卸载/解除接入集群: kpanda/user-guide/clusters/delete-cluster.md
                   - 集群角色: kpanda/user-guide/clusters/cluster-role.md
                   - 集群状态: kpanda/user-guide/clusters/cluster-status.md
                   - 如何选择运行时: kpanda/user-guide/clusters/runtime.md
                   - 集群版本支持范围: kpanda/user-guide/clusters/cluster-version.md
-                  - 接入 Rancher 集群: kpanda/user-guide/clusters/integrate-rancher-cluster.md
                   - 集群中部署第二调度器: kpanda/user-guide/clusters/cluster-scheduler-plugin.md
                   - 集群证书更新: kpanda/user-guide/clusters/k8s-cert.md
               - 命名空间:
@@ -278,7 +283,7 @@ nav:
                   - 其他方案:
                     - Knative 介绍: kpanda/user-guide/scale/knative/knative.md
                     - 安装 Knative: kpanda/user-guide/scale/knative/install.md
-                    - Kantive 场景: kpanda/user-guide/scale/knative/scene.md
+                    - Knative 场景: kpanda/user-guide/scale/knative/scene.md
                     - Knative 实践: kpanda/user-guide/scale/knative/playground.md
               - Helm 应用:
                   - Helm 模板: kpanda/user-guide/helm/README.md
@@ -293,6 +298,7 @@ nav:
                   - 创建服务: kpanda/user-guide/network/create-services.md
                   - 创建路由: kpanda/user-guide/network/create-ingress.md
                   - 网络策略: kpanda/user-guide/network/network-policy.md
+                  - 网络配置: network/config/index.md
               - 自定义资源: kpanda/user-guide/custom-resources/create.md
               - 容器存储:
                   - 数据卷声明: kpanda/user-guide/storage/pvc.md
@@ -505,17 +511,21 @@ nav:
                   - 网卡规划: network/plans/ethplan.md
                   - 网络规划: network/plans/netplan.md
               - 网络配置:
-                  - IP 池管理:
+                  - 网络配置: network/config/index.md
+                  - 静态 IP 池:
                       - 创建子网及 IP 池: network/config/ippool/createpool.md
                       - IP 池场景说明: network/config/ippool/ippoolusage.md
+                      - IP 预留: network/config/reserved-ip.md
                   - 使用 IP 池:
                       - 工作负载使用 IP 池: network/config/use-ippool/usage.md
                       - 第三方工作负载使用IP池: network/config/use-ippool/cutomizedusage.md
+                  - Multus CR 管理: network/config/multus-cr.md
+                  - SR-IOV 节点策略: network/config/sriov-node-policy.md
                   - 工作负载使用 RDMA:
                       - 工作负载使用 RDMA: network/config/userdma.md
                       - RDMA 使用方式对比: network/config/rdmatype.md
                       - RDMA 指标: network/config/rdma-metrics.md
-                  - 创建 Multus CR: network/config/multus-cr.md
+
               - 网络性能:
                   - 网络 CNI 性能测试报告: network/performance/cni-performance.md
                   - Spiderpool 性能测试报告: network/performance/spiderpool-performance.md
@@ -540,6 +550,7 @@ nav:
                   - 升级: network/modules/spiderpool/upgrade.md
                   - 配置参考: network/modules/spiderpool/config.md
                   - 常用命令: network/modules/spiderpool/command.md
+                  - RDMA 看板: network/modules/spiderpool/rdma-dashboard.md                
                   - 公有云适配:
                       - 在阿里云环境运行: network/modules/spiderpool/public-cloud/alibabacloud.md
                       - 在 AWS 环境运行: network/modules/spiderpool/public-cloud/awscloud.md
@@ -578,7 +589,7 @@ nav:
                   - 故障排查: network/modules/calico/debug.md
               - 集成 Cilium:
                   - 介绍: network/modules/cilium/index.md
-                  - 安装参数配置: network/modules/cilium/install.md
+                  - 部署 Cilium: network/modules/cilium/deploy-cilium.md
                   - 未支持功能说明: network/modules/cilium/not-support.md
                   - Cilium 网络通信加速: network/modules/cilium/cilium-speedup.md
                   - 应用跨集群通信: network/modules/cilium/cross-cluster.md
@@ -631,6 +642,10 @@ nav:
                   - 阿里云运行 Calico: network/modules/aliyun-terway/aliyun-calico.md
                   - 阿里云运行 Cilium: network/modules/aliyun-terway/aliyun-cilium.md
                   - 常见问题: network/modules/aliyun-terway/Q_A.md
+              - 集成 Unifabric:
+                  - 功能特性: network/modules/unifabric/features.md
+                  - Release Notes: network/modules/unifabric/release-notes.md
+                  - 安装 Unifabric: network/modules/unifabric/install.md
           - 云原生存储:
               - 介绍:
                   - 什么是云原生存储: storage/index.md
@@ -793,7 +808,9 @@ nav:
                       - OTel SDK增强Go应用: insight/quickstart/otel/golang/golang.md
                       - 将 TraceId 和 SpanId 写入 Golang 应用日志: insight/quickstart/otel/golang/traceid_logs.md
                   - 其他观测技术集成:
-                      - 使用OTel接收SkyWalking链路数据: insight/best-practice/sw-to-otel.md
+                      - insight/best-practice/index.md
+                      - 使用OTel接收 SkyWalking 链路数据: insight/best-practice/sw-to-otel.md
+                      - 接入 Nginx Ingress 的链路追踪: insight/best-practice/ingress-otel.md
               - 仪表盘:
                   - 概览: insight/user-guide/dashboard/overview.md
                   - 仪表盘: insight/user-guide/dashboard/dashboard.md
@@ -842,6 +859,7 @@ nav:
                   - VictoriaMetrics 资源规划: insight/best-practice/vm-resource-plan.md
                   - 创建 Remote Sampling Server: insight/reference/remote-sampling.md
                   - Insight 和 Insight-agent 安全的连接 Kafka: insight/reference/security-connect-kafka.md
+                  - 配置 Alertmanager 逐条发送告警通知: insight/reference/send-alert-notifications-individually.md
               - 兼容性测试:
                   - Kubernetes 兼容性测试: insight/compati-test/k8s-compatibility.md
                   - Rancher 兼容性测试: insight/compati-test/rancher-compatibility.md
@@ -1031,6 +1049,7 @@ nav:
                   - TLS 密钥管理: mspider/user-guide/mesh-config/tls-secret.md
                   - 组件资源自定义: mspider/user-guide/mesh-config/custom-res.md
                   - 组件资源弹性伸缩: mspider/user-guide/mesh-config/component-hpa.md
+                  - 支持的 Gateway API: mspider/user-guide/mesh-config/gateway-api.md
               - 测试:
                   - OCP 接入网格: mspider/test/ocp.md
                   - Openshift 与网格兼容性测试: mspider/test/openshift.md
@@ -1252,6 +1271,7 @@ nav:
                   - 什么是大模型服务平台: hydra/intro/index.md
                   - Release Notes: hydra/intro/release-notes.md
                   - 部署大模型服务平台: hydra/intro/deploy-ws.md
+                  - 离线升级大模型服务平台: hydra/intro/offline-upgrade.md
               - 普通用户视图:
                   - 模型广场: hydra/index.md
                   - 模型体验: hydra/exp.md
@@ -1262,6 +1282,7 @@ nav:
                   - API Key 管理: hydra/apikey.md
               - 运维管理:
                   - 模型广场管理: hydra/oam/index.md
+                  - MaaS模型管理: hydra/oam/maas.md
                   - 模型部署管理: hydra/oam/mdm.md
               - 用户实践场景:
                   - 示例场景介绍: hydra/user-guides/index.md
@@ -1285,9 +1306,10 @@ nav:
                       - 删除 Notebook: baize/developer/notebooks/delete.md
                       - SSH 访问 Notebook: baize/developer/notebooks/notebook-with-ssh.md
                       - Notebook 中使用环境: baize/developer/notebooks/notebook-with-envs.md
+                      - 定制Notebook环境镜像: baize/developer/notebooks/customize-notebook-image.md
                       - baizectl 命令行工具: baize/developer/notebooks/baizectl.md
                       - baizess 换源工具: baize/developer/notebooks/baizess.md
-                      - Notebook 闲置超时自动关机: baize/developer/notebooks/notebook-auto-close.md
+                      - Notebook闲置超时自动关机: baize/developer/notebooks/notebook-auto-close.md
                   - 任务管理:
                       - 创建任务: baize/developer/jobs/create.md
                       - 创建 Pytorch 任务: baize/developer/jobs/pytorch.md
@@ -1316,7 +1338,7 @@ nav:
                   - 队列管理:
                       - 创建队列: baize/oam/queue/create.md
                       - 删除队列: baize/oam/queue/delete.md
-                  - GPU 信息: baize/gpu.md
+                  - GPU 信息: baize/oam/gpu.md
               - 最佳实践:
                   - 部署 NFS 做数据集预热: baize/best-practice/deploy-nfs-in-worker.md
                   - 更新 Notebook 内置镜像: baize/best-practice/change-notebook-image.md
@@ -1385,10 +1407,11 @@ nav:
               - 介绍:
                   - 什么是设备管理: topohub/intro/index.md
                   - 安装设备管理组件: topohub/intro/install.md
+                  - 设备管理 Release Notes: topohub/intro/release-notes.md
               - 设备:
-                  - 接入设备: topohub/user-guide/device/access-device.md
-                  - 批量接入设备: topohub/user-guide/device/batch-access-device.md
-                  - 管理设备: topohub/user-guide/device/manage-device.md
+                  - 接入设备: topohub/device/index.md
+                  - 批量接入设备: topohub/device/batch-access.md
+                  - 管理设备: topohub/device/manage-device.md
       - 管理:
           - 全局管理:
               - 介绍:
@@ -1443,6 +1466,7 @@ nav:
                       - 服务网格审计项: ghippo/user-guide/audit/gproduct-audit/mspider.md
                       - 中间件审计项: ghippo/user-guide/audit/gproduct-audit/mcamel.md
                       - 算力云审计项: ghippo/user-guide/audit/gproduct-audit/zestu.md
+                      - 大模型服务平台审计项: ghippo/user-guide/audit/gproduct-audit/hydra.md
                       - 全局管理审计项: ghippo/user-guide/audit/gproduct-audit/ghippo.md
               - 运营管理:
                   - ghippo/user-guide/report-billing/index.md
@@ -1488,7 +1512,6 @@ nav:
                       - 定制导航栏: ghippo/best-practice/menu/navigator.md
                       - 基于权限显示/隐藏导航栏菜单: ghippo/best-practice/menu/menu-display-or-hiding.md
                   - 系统消息: ghippo/best-practice/system-message.md
-
               - 故障排查:
                   - ingressgateway 无法启动: ghippo/troubleshooting/ghippo01.md
                   - 登录报错 401 或 403: ghippo/troubleshooting/ghippo02.md
@@ -1552,6 +1575,8 @@ nav:
                   - RabbitMQ: download/modules/middleware/rabbitmq.md
                   - Redis: download/modules/middleware/redis.md
                   - RocketMQ: download/modules/middleware/rocketmq.md
+              - 云原生 AI:
+                  - 大模型服务平台: download/modules/hydra.md
               - 云边协同: download/modules/kant.md
               - 全局&运营管理:
                   - 全局管理: download/modules/ghippo.md
@@ -1559,12 +1584,15 @@ nav:
   - 博客:
       - 博文索引: blogs/index.md
       - 2025:
+          - DCE首批通过AI Conformance认证: blogs/2025/ai-conformance.md
+          - Paco 连任 K8s 指导委员会: blogs/2025/paco-ksc.md
+          - 聚焦 Kubernetes 指导委员会: blogs/2025/k8s-steering-spotlight.md
           - 开源文档的构建/运营/贡献: blogs/2025/open-source-doc.md
           - 2024 中国开源年度报告: blogs/2025/open-source-report.md
       - 2024:
           - DaoCloud成功加入K8s安全响应委员会: blogs/2024/241219-sec-privacy.md
           - 从社区小白到 CNCF 大使: blogs/2024/241108-cncf-ambassador.md
-          - containerd 相关项目集中发布新版本: blogs/2024/241106-containerd-nerdctl-lima.md
+          - containerd等项目集中发布新版本: blogs/2024/241106-containerd-nerdctl-lima.md
           - K8s 1.31 OCI 工件的只读卷: blogs/2024/240816-1.31-image.md
           - Nvidia 征服最新的 AI 测试: blogs/2024/20240619-nvidiaai.md
           - Kubernetes 十周年: blogs/2024/0606-k8s-birth.md

@@ -9,6 +9,14 @@
 *[SR-IOV]: Single Root IO Virtualization 的缩写，一种网卡虚拟化的技术
 *[RDMA]: Remote Direct Memory Access 的缩写，即远程直接内存访问，这是一个支撑 LLM 大模型和 GPT 的热门技术
 
+## 2025-09-30
+
+### v0.16.5
+
+- **新增** 支持当 Spiderpool 关闭自动池功能，UI 不能使用自动池功能
+- **新增** 支持对 Multus CR 进行权限验证，非 Cluster Admin 用户无法创建、更新、删除 Multus CR。
+- **修复** 获取 Spiderpool IP 池，如果使用 Query 参数 `selectNamespace` 无法获取到期望的 IP 池。
+
 ## 2025-07-30
 
 ### v0.16.4
@@ -37,7 +45,7 @@
 
 ### v0.16.1
 
-- **修复** `更新 multus 接口` cniType 为 IPvlan 时传入的 bond 不为空，且被更新的 ipvlan 的 Bond.Name 为 "" 时将 panic。
+- **修复** `更新 multus 接口` cniType 为 IPvlan 时传入的 bond 不为空，且被更新的 IPvlan 的 Bond.Name 为 "" 时将 panic。
 - **修复** `更新 spiderClaimParameter 接口`更新失败，却提示创建失败，提示信息有误。
 
 ## 2024-09-30
@@ -54,12 +62,16 @@
 ### v0.15.1
 
 - **修复** 界面创建 Multus CR时点击创建后页面卡死的问题。
-- **修复** 启用默认池功能时没有可用默认池的问题。现在的 ListAllSubnetsAndIPPoolsAndMultus API 能够给 Multus CR 返回 defaultV4IPPools 和 defaultV6IPPools 两个字段。
+- **修复** 启用默认池功能时没有可用默认池的问题。现在的 ListAllSubnetsAndIPPoolsAndMultus API
+  能够给 Multus CR 返回 defaultV4IPPools 和 defaultV6IPPools 两个字段。
 
 !!! note
 
-    Spidernet 是部署在全局服务集群，对底层 Spiderpool 项目的资源进行创建、删除等一些操作的 API 项目，Spiderpool 项目位于 Addon 中，由用户自行安装、管理与维护，
-    但 Spiderpool 项目自 v0.9.3 版本起修复了一些重要问题，详情参考 [Spiderpool Release Notes](../modules/spiderpool/release-notes.md)。若您使用的是 v0.9.3 之前的版本，建议升级至最新版本。
+    Spidernet 是部署在全局服务集群，对底层 Spiderpool 项目的资源进行创建、删除等一些操作的 API 项目，
+    Spiderpool 项目位于 Addon 中，由用户自行安装、管理与维护，但 Spiderpool 项目自 v0.9.3
+    版本起修复了一些重要问题，详情参考
+    [Spiderpool Release Notes](../modules/spiderpool/release-notes.md)。若您使用的是
+    v0.9.3 之前的版本，建议升级至最新版本。
 
 ## 2024-05-30
 
@@ -68,7 +80,7 @@
 - 适配 **Spiderpool v0.9.3**
 
 - **修复** ListAllSubnetsAndIPPoolsAndMultus API 通过 namespace 亲和性过滤池失败
-- **修复** 修复 ListMultusCniConfig API 指针值对比判断错误，并修复判断中将 sriov 的错写为 ipvlan 的问题
+- **修复** 修复 ListMultusCniConfig API 指针值对比判断错误，并修复判断中将 SR-IOV 的错写为 IPvlan 的问题
 - **新增** 支持界面创建 ovs-cni 类型的 Multus CR
 
 ## 2024-04-30

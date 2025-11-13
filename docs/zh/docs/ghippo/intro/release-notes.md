@@ -2,27 +2,54 @@
 
 本页列出全局管理各版本的 Release Notes，便于您了解各版本的演进路径和特性变化。
 
+## 2025-10-31
+
+## v0.43.0
+
+- **新增** (CSP) 用户名/手机号/密码 支持加密
+- **新增** (CSP) 给运维提供创建 `domains`、`sms_templates` 表记录的 API
+- **优化** 定期把权限数据从 db 同步给 `foldersauthzes`、`workspace` 等 CR
+- **修复** (CSP) 修复关闭实名认证不生效问题
+
+## 2025-09-30
+
+### v0.42.0
+
+- **新增** 当前用户 API 返回用户名信息
+- **新增** (CSP) 主账号查看审计日志功能
+- **新增** (CSP) 增删改查子账号操作记录审计日志
+- **新增** (CSP) 支持根据 `domain` 返回不同的二房东支付宝收款链接和实名认证
+- **新增** (CSP) 支持根据 `domain` 返回不同的二房东短信网关
+- **优化** 设置 `SMTP` 时用户名密码在 API 传输时进行加密
+- **修复** `SDK` 新增授权时会重复通知问题
+- **修复** 切换跟随浏览器语言不生效问题
+- **修复** (CSP) 修复关闭实名认证不生效问题
+- **修复** `SMTP` 测试邮件失败问题
+
+## 2025-08-30
+
+### v0.41.1
+
+- **新增** (CSP) 点击登录注册页的 LOGO 可跳转到一个可配置的 URL
+- **优化** 创建子账号 API 增加用户名校验
+
 ## 2025-07-31
 
-### v0.40.0
-
-### 功能
+### v0.40.3
 
 - **新增** SaaS 模式升级成支持子账号功能
 - **新增** SaaS 模式支持增删改查子账号
 - **新增** SaaS 模式支持新的登录注册页面
 - **优化** 支持登录 `Token` 里带上 `domain` 信息
-- **修复** 修复测试邮件服务器时，同时选取 `SSL` 和 `starTLS` 不报错问题
-- **修复** 修复子产品插入一级菜单失败问题
+- **优化** 优化 Helm Chart `Values` 中 `sidecar` 资源配置参数，将 `apiserver`、`audit-server`、`ghippo-ui`、`anakin`、`controller-manager` 中的 `sidecar.istio.io/proxyResources` 统一聚合到 `global.istioSidecar.resources` 调控。
+- **修复** 测试邮件服务器时，同时选取 `SSL` 和 `starTLS` 不报错问题
+- **修复** 子产品插入一级菜单失败问题
+- **修复** 平台关闭双因子验证时，重置密码显示重置 `OTP` 的问题
+- **修复** 前端对接身份提供商 `OIDC` 协议一键获取失败问题
+- **修复** 登录页图标、背景未正常展示问题
+- **修复** 定制的登陆页图表丢失问题
 
 ## 2025-06-30
-
-### v0.39.0
-
-- **优化** Chart 中 `Values` 中 `sidecar` 资源配置参数，将 `apiserver`、`audit-server`、`ghippo-ui`、`anakin`、`controller-manager` 中的 `sidecar.istio.io/proxyResources` 统一聚合到 `global.istioSidecar.resources` 调控。
-- **修复** 平台关闭双因子验证时，重置密码显示重置 `OTP` 的问题
-- **修复** 测试邮件服务器时，同时选取 `ssl` 和 `startls` 不报错问题
-- **修复** 前端对接身份提供商 `OIDC` 协议一键获取失败问题（封装访问 `well-known-url` 的过程，返回 `openid configuration` 至前端显示）
 
 ### v0.38.1
 

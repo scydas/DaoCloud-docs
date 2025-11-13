@@ -11,6 +11,21 @@ hide:
 
 ## 2025 年
 
+- [DaoCloud 首批通过 CNCF Kubernetes AI Conformance 认证](./2025/ai-conformance.md)
+
+    [DCE 5.0](https://docs.daocloud.io/) 首批通过 CNCF Kubernetes AI Conformance 认证。
+
+- [再登云原生之巅：Paco Xu 入选 Kubernetes 指导委员会](./2025/paco-ksc.md)
+
+    Paco Xu 再度成功入选 Kubernetes 指导委员会。
+
+- [聚焦 Kubernetes 指导委员会](./2025/k8s-steering-spotlight.md)
+
+    [Kubernetes 指导委员会](https://github.com/kubernetes/steering) 是 Kubernetes 项目的支柱，
+    确保其充满活力的社区和治理结构顺畅高效地运行。尽管 Kubernetes 的技术卓越性常常通过其
+    [特别兴趣小组（SIG）和工作组（WG）](https://github.com/kubernetes/community) 被聚焦，
+    但真正默默掌舵的英雄是指导委员会的成员。他们应对复杂的组织挑战，赋能贡献者，并培育 Kubernetes 所闻名的繁荣开源生态。
+
 - [开源文档的构建、运营和贡献](./2025/open-source-doc.md)
 
     聊一聊开源站点，特别是 DaoCloud 相关的开源站点。

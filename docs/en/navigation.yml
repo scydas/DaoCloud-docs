@@ -10,6 +10,8 @@ nav:
               - Use Cases: dce/scenario.md
               - DaoCloud is a KCSP: dce/kcsp.md
               - Release Notes:
+                  - v0.34.0-20250930 Released: dce/dce-rn/20250930.md
+                  - v0.33.0-20250831 Released: dce/dce-rn/20250831.md
                   - v0.32.0-20250731 Released: dce/dce-rn/20250731.md
                   - v0.31.0-20250630 Released: dce/dce-rn/20250630.md
                   - v0.30.0-20250530 Released: dce/dce-rn/20250530.md
@@ -72,8 +74,10 @@ nav:
                   - On TencentOS Server 3.1: install/os-install/TencentOS-install-dce5.0.md
                   - On NeoKylin Linux Advanced Server V7Update6: install/os-install/neokylin-install-dce5.0.md
                   - On Other Linux: install/os-install/otherlinux.md
+              - Lightweight Install:
+                  - Verify Lightweight Deployment Plan: install/light-install/light-install-solution.md
+                  - Lightweight Deployment: install/light-install/install-light.md
               - Upgrade:
-                  - Overview: install/upgrade-des.md
                   - Upgrade DCE 5.0 Components: install/upgrade.md
                   - Upgrade from Standard to Platinum: install/evolve.md
               - Uninstall and Import:
@@ -219,15 +223,17 @@ nav:
                   - FAQs: kpanda/intro/faq.md
               - Clusters:
                   - Create Cluster: kpanda/user-guide/clusters/create-cluster.md
-                  - Integrate Cluster: kpanda/user-guide/clusters/integrate-cluster.md
-                  - Access Cluster: kpanda/user-guide/clusters/access-cluster.md
+                  - Integrate/Scale/Delete Clusters:
+                      - Integrate Cluster: kpanda/user-guide/clusters/integrate-cluster.md
+                      - Integrate Rancher Cluster: kpanda/user-guide/clusters/integrate-rancher-cluster.md
+                      - Scale Worker Nodes of Global Service Cluster: kpanda/best-practice/add-worker-node-on-global.md
+                      - Access Cluster: kpanda/user-guide/clusters/access-cluster.md
+                      - Delete Cluster: kpanda/user-guide/clusters/delete-cluster.md
                   - Upgrade Cluster: kpanda/user-guide/clusters/upgrade-cluster.md
-                  - Delete Cluster: kpanda/user-guide/clusters/delete-cluster.md
                   - Cluster Roles: kpanda/user-guide/clusters/cluster-role.md
                   - Cluster Status: kpanda/user-guide/clusters/cluster-status.md
                   - Choose Runtime: kpanda/user-guide/clusters/runtime.md
                   - Cluster Versions: kpanda/user-guide/clusters/cluster-version.md
-                  - Integrate Rancher Cluster: kpanda/user-guide/clusters/integrate-rancher-cluster.md
                   - Deploy 2nd Scheduler in a Cluster: kpanda/user-guide/clusters/cluster-scheduler-plugin.md
                   - Renew Cluster Cert: kpanda/user-guide/clusters/k8s-cert.md
               - Namespaces:
@@ -396,8 +402,6 @@ nav:
                   - What is Multicloud Management: kairship/intro/index.md
                   - Features: kairship/intro/features.md
                   - Architecture: kairship/intro/architecture.md
-                  - Competitiveness: kairship/intro/benefits.md
-                  - Concepts: kairship/intro/concepts.md
                   - FAQs: kairship/intro/faq.md
                   - Offline Upgrade: kairship/intro/offline-upgrade.md
                   - Multicloud Release Notes: kairship/intro/release-notes.md
@@ -494,6 +498,7 @@ nav:
                       - Use IP Pool by Workload from 3rd party: network/config/use-ippool/cutomizedusage.md
                   - Workload Uses RDMA: network/config/userdma.md
                   - Multus CR: network/config/multus-cr.md
+                  - SR-IOV NodePolicy: network/modules/sriov-node-policy.md
               - Performance reports:
                   - Network CNI performance test report: network/performance/cni-performance.md
                   - Spiderpool performance test report: network/performance/spiderpool-performance.md
@@ -516,6 +521,7 @@ nav:
                   - Upgrade: network/modules/spiderpool/upgrade.md
                   - Config: network/modules/spiderpool/config.md
                   - Commands: network/modules/spiderpool/command.md
+                  - RDMA Dashboard: network/modules/spiderpool/rdma-dashboard.md           
                   - Public Cloud:
                       - Running on Alibaba Cloud: network/modules/spiderpool/public-cloud/alibabacloud.md
                       - Running on AWS: network/modules/spiderpool/public-cloud/awscloud.md
@@ -553,9 +559,9 @@ nav:
                   - Troubleshoot: network/modules/calico/debug.md
               - Cilium:
                   - Intro: network/modules/cilium/index.md
-                  - Args Config: network/modules/cilium/install.md
+                  - Deploy Cilium: network/modules/cilium/deploy-cilium.md
                   - Unsupported Features: network/modules/cilium/notSupport.md
-                  - Cilium Network Communication Acceleration: network/modules/cilium/cilium-speedup.md
+                  - Cilium Network Acceleration: network/modules/cilium/cilium-speedup.md
                   - Cross-Cluster Application Communication: network/modules/cilium/cross-cluster.md
                   - Cilium Network Policy Support for IPVlan: network/modules/cilium/cilium_chaining.md
               - Contour:
@@ -1016,6 +1022,7 @@ nav:
                   - Features: middleware/common/feature.md
                   - Supported K8s Versions: middleware/compatibility.md
                   - Permissions: middleware/permission.md
+                  - Middleware Release Notes: middleware/release-notes.md
               - Common Config for Middleware:
                   - First-Time Use: middleware/common/index.md
                   - Custom Permissions: middleware/common/permissions.md
@@ -1028,7 +1035,7 @@ nav:
                       - Benefits: middleware/mysql/intro/benefits.md
                       - Offline Upgrade MySQL: middleware/mysql/intro/offline-install.md
                       - Concepts: middleware/mysql/intro/concepts.md
-                      - Release Notes: middleware/mysql/release-notes.md
+                      #   - Release Notes: middleware/mysql/release-notes.md
                   - Quick Start:
                       - Instance Lifecycle:
                           - Create MySQL Instance: middleware/mysql/user-guide/create.md
@@ -1059,7 +1066,7 @@ nav:
                       - What is MongoDB: middleware/mongodb/intro/index.md
                       - Features: middleware/mongodb/intro/features.md
                       - Offline Upgrade MongoDB: middleware/mongodb/intro/offline-install.md
-                      - Release Notes: middleware/mongodb/release-notes.md
+                      #   - Release Notes: middleware/mongodb/release-notes.md
                   - Quick Start:
                       - Create MongoDB Instance: middleware/mongodb/user-guide/create.md
                       - Update MongoDB Instance: middleware/mongodb/user-guide/update.md
@@ -1071,7 +1078,7 @@ nav:
                       - What is PostgreSQL: middleware/postgresql/intro/index.md
                       - Features: middleware/postgresql/intro/concepts.md
                       - Offline Upgrade PostgreSQL: middleware/postgresql/intro/offline-install.md
-                      - Release Notes: middleware/postgresql/release-notes.md
+                      #   - Release Notes: middleware/postgresql/release-notes.md
                   - Quick Start:
                       - Create PostgreSQL Instance: middleware/postgresql/user-guide/create.md
                       - Update PostgreSQL Instance: middleware/postgresql/user-guide/update.md
@@ -1085,7 +1092,7 @@ nav:
                       - What is Redis: middleware/redis/intro/index.md
                       - Use Cases: middleware/redis/intro/scenarios.md
                       - Offline Upgrade Redis: middleware/redis/intro/offline-install.md
-                      - Release Notes: middleware/redis/release-notes.md
+                      #   - Release Notes: middleware/redis/release-notes.md
                   - Quick Start:
                       - Create Redis Instance: middleware/redis/user-guide/create.md
                       - Update Redis Instance: middleware/redis/user-guide/update.md
@@ -1108,7 +1115,7 @@ nav:
                       - Use Cases: middleware/elasticsearch/intro/scenarios.md
                       - Concepts: middleware/elasticsearch/intro/concepts.md
                       - Offline Upgrade elasticsearch: middleware/elasticsearch/intro/offline-install.md
-                      - Release Notes: middleware/elasticsearch/release-notes.md
+                      #   - Release Notes: middleware/elasticsearch/release-notes.md
                   - ES Cluster Capacity Planning: middleware/elasticsearch/user-guide/cluster-capacity-plan.md
                   - Quick Start:
                       - Create ES Instance: middleware/elasticsearch/user-guide/create.md
@@ -1126,7 +1133,7 @@ nav:
                       - Use Cases: middleware/kafka/intro/scenarios.md
                       - Offline Upgrade kafka: middleware/kafka/intro/offline-install.md
                       - Concepts: middleware/kafka/intro/concepts.md
-                      - Release Notes: middleware/kafka/release-notes.md
+                      #   - Release Notes: middleware/kafka/release-notes.md
                   - Quick Start:
                       - Create Kafka Instance: middleware/kafka/user-guide/create.md
                       - View/Update/Delete Kafka: middleware/kafka/user-guide/view-update-delete.md
@@ -1141,7 +1148,7 @@ nav:
                       - Use Cases: middleware/rabbitmq/intro/scenarios.md
                       - Offline Upgrade RabbitMQ: middleware/rabbitmq/intro/offline-install.md
                       - Concepts: middleware/rabbitmq/intro/concepts.md
-                      - Release Notes: middleware/rabbitmq/release-notes.md
+                      #   - Release Notes: middleware/rabbitmq/release-notes.md
                   - Quick Start:
                       - Create RabbitMQ Instance: middleware/rabbitmq/user-guide/create.md
                       - Update RabbitMQ Instance: middleware/rabbitmq/user-guide/update.md
@@ -1156,7 +1163,7 @@ nav:
                       - What is RocketMQ: middleware/rocketmq/intro/index.md
                       - Concepts: middleware/rocketmq/intro/concepts.md
                       - Offline Upgrade RocketMQ: middleware/rocketmq/intro/offline-install.md
-                      - Release Notes: middleware/rocketmq/release-notes.md
+                      #   - Release Notes: middleware/rocketmq/release-notes.md
                   - Quick Start:
                       - Create RocketMQ Instance: middleware/rocketmq/quick-start/create-rocketmq.md
                       - Update RocketMQ Instance: middleware/rocketmq/quick-start/update-rocketmq.md
@@ -1168,7 +1175,7 @@ nav:
                       - Use Cases: middleware/minio/intro/scenarios.md
                       - Offline Upgrade MinIO: middleware/minio/intro/offline-install.md
                       - Concepts: middleware/minio/intro/concepts.md
-                      - Release Notes: middleware/minio/release-notes.md
+                      #   - Release Notes: middleware/minio/release-notes.md
                   - Quick Start:
                       - Create MinIO Instance: middleware/minio/user-guide/create.md
                       - Update/Delete MinIO Instance: middleware/minio/user-guide/update-delete.md
@@ -1180,6 +1187,8 @@ nav:
               - Intro:
                   - What is LLM Studio: hydra/intro/index.md
                   - Release Notes: hydra/intro/release-notes.md
+                  - Deploy LLM Studio: hydra/intro/deploy-ws.md
+                  - Offline Upgrade LLM Studio: hydra/intro/offline-upgrade.md
               - User View:
                   - Model Gallery:
                       - hydra/index.md
@@ -1192,6 +1201,7 @@ nav:
                   - API Keys: hydra/apikey.md
               - Admin Console:
                   - Manage Model Gallery: hydra/oam/index.md
+                  - MaaS Models: hydra/oam/maas.md
                   - Manage Deployed Models: hydra/oam/mdm.md
               - Best Practices:
                   - Intro: hydra/user-guides/index.md
@@ -1241,7 +1251,7 @@ nav:
                   - Queues:
                       - Create Queue: baize/oam/queue/create.md
                       - Delete Queue: baize/oam/queue/delete.md
-                  - GPUs: baize/gpu.md
+                  - GPUs: baize/oam/gpu.md
               - Best Practices:
                   - Deploy NFS to Preload Dataset: baize/best-practice/deploy-nfs-in-worker.md
                   - Update Notebook Built-in Images: baize/best-practice/change-notebook-image.md
@@ -1303,6 +1313,16 @@ nav:
                   - Instructions to Connect a Modbus Device: kant/best-practice/modbus-device-demo.md
                   - Smart Device Control: kant/best-practice/custom-device-control.md
                   - Develop Device Driver - Mapper: kant/best-practice/develop-device-mapper.md
+      - Devices:
+          - Device Management:
+              - Introduction:
+                  - What is Device Management: topohub/intro/index.md
+                  - Install Device Management Component: topohub/intro/install.md
+                  - Device Management Release Notes: topohub/intro/release-notes.md
+              - Devices:
+                  - Onboard Device: topohub/device/index.md
+                  - Batch Onboard Devices: topohub/device/batch-access.md
+                  - Manage Devices: topohub/device/manage-device.md
       - Management:
           - Global Management:
               - Intro:
@@ -1400,6 +1420,7 @@ nav:
                   - Customize Nav Bar:
                       - Customize Nav Bar: ghippo/best-practice/menu/navigator.md
                       - Display/Hide Navigation Bar Menu Based on Permissions: ghippo/best-practice/menu/menu-display-or-hiding.md
+                  - System Messages: ghippo/best-practice/system-message.md
               - Troubleshoot:
                   - ingressgateway cannot start: ghippo/troubleshooting/ghippo01.md
                   - Login Error 401 or 403: ghippo/troubleshooting/ghippo02.md
@@ -1469,6 +1490,9 @@ nav:
                   - Operation Management: download/modules/gmagpie.md
   - Blogs:
       - Index: blogs/index.md
+      - 2025:
+          - DCE Passed CNCF Kubernetes AI Conformance: blogs/2025/ai-conformance.md
+          - Spotlight on the K8s Steering Committee: blogs/2025/k8s-steering-spotlight.md
       - 2024:
           - From Community Novice to CNCF Ambassador: blogs/2024/241108-cncf-ambassador.md
           - containerd v2.0, nerdctl v2.0, and Lima v1.0: blogs/2024/241106-containerd-nerdctl-lima.md
